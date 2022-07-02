@@ -41,19 +41,7 @@ button-white:focus {
     border: none;
     outline: none;
 }
-#parent {
-    width: 100%;
-    height: 30px;
-    white-space: nowrap;
-    align-items: center;
-}
-.child {
-    display: inline-block;
-    width: 16.5%;
-    text-align:center;
-    font-weight: bold;
-    color:rgb(65, 90, 158);
-}
+
 #action{
     height: 55px;
     padding: 9px 10px;
