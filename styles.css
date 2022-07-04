@@ -109,11 +109,9 @@ button-white:focus {
     text-align: center;
 }
 
-.button-emergency{
-    background-color: white;
+#button-emergency{
     text-align: center;
     vertical-align: middle;
-    color: black;
     size: 100px 200px;
 }
 

@@ -92,7 +92,7 @@ class App extends React.Component{
                     <br/>
                     <h2>The crew has been alerted, and help is on the way.</h2>
                     <br/>
-                    <button className="button-emergency" onClick={() => {
+                    <button className="btn btn-warning" id="button-emergency" onClick={() => {
                         this.setState({page: 'Home'})
                     }}><h4>CANCEL</h4></button>
                 </div>
