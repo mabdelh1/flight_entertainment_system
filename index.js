@@ -14,7 +14,7 @@ class App extends React.Component{
                     <div id="categories">
                         &nbsp; &nbsp; &nbsp;
                         <button className="button-solid" onClick={() => {this.setState({page: 'Movies'})}}><i className="fa-solid fa-video fa-6x"></i> <br></br>Movies</button> &nbsp;
-                        <button className="button-solid" onClick={() => {this.setState({page: 'Phone'})}}><i className="fa-solid fa-phone fa-6x"></i> <br></br> Phones</button> &nbsp;
+                        <button className="button-solid" onClick={() => {this.setState({page: 'Phone'})}}><i className="fa-solid fa-phone fa-6x"></i> <br></br> Phone</button> &nbsp;
                         <button className="button-solid" onClick={() => {this.setState({page: 'Games'})}}><i className="fa-solid fa-gamepad fa-6x"></i> <br></br> Games</button> &nbsp;
                         <button className="button-solid" onClick={() => {this.setState({page: 'Flight Info'})}}><i className="fa-solid fa-plane fa-6x"></i> <br></br> Flight Info</button> &nbsp;
                         <button className="button-solid" onClick={() => {this.setState({page: 'Purchases'})}}><i className="fa-solid fa-credit-card fa-6x"></i> <br></br> Purchases</button> &nbsp;
@@ -22,8 +22,15 @@ class App extends React.Component{
                         &nbsp; &nbsp; &nbsp;
                     </div>
                     <div id="action">
-                        <button id="element3" type="button" className="btn btn-light btn-md btn-block">Declare Emergancy</button>
-                        <button id="element4" type="button" className="btn btn-light btn-md btn-block">Call Attendant</button>
+                        <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Emergency'})
+                        }}>Declare
+                            Emergency
+                        </button>
+                        <button id="element4" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Assistance'})
+                        }}>Call Attendant
+                        </button>
                     </div>
                 </div>
             );
@@ -73,6 +80,31 @@ class App extends React.Component{
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <h1 id="element6">DINING PAGE RENDERED</h1>
+                </div>
+            );
+        }
+        else if (this.state.page === 'Emergency') {
+            return (
+                <div id="emergency">
+                    <h1 className="emergency">EMERGENCY DECLARED</h1>
+                    <br/>
+                    <h2>The crew has been alerted, and help is on the way.</h2>
+                    <br/>
+                    <button className="button-emergency" onClick={() => {
+                        this.setState({page: 'Home'})
+                    }}><h4>CANCEL</h4></button>
+                </div>
+            );
+        } else if (this.state.page === 'Assistance') {
+            return (
+                <div className="text-center">
+                    <h1>We received your request!</h1>
+                    <br/>
+                    <h3>A flight attendant is on their way to assist you now.</h3>
+                    <br/>
+                    <button className="assist" onClick={() => {
+                        this.setState({page: 'Home'})
+                    }}><h4>CANCEL</h4></button>
                 </div>
             );
         }
