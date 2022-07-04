@@ -39,7 +39,8 @@ class App extends React.Component{
             return(
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
-                    <h1 id="element6">MOVIES PAGE RENDERED</h1>
+                    <h1 id="element6">MOVIES</h1> <br></br>
+                    <iframe width="720" height="405" src="https://www.youtube.com/embed/videoseries?list=PLxZNVDf39dNT_B3XrHzrOGoA-KQ675d4a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             );
         }
@@ -55,7 +56,8 @@ class App extends React.Component{
             return(
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
-                    <h1 id="element6">GAMES PAGE RENDERED</h1>
+                    <h1 id="element6">GAMES</h1> <br></br>
+                    <iframe width="720" height="405" src="https://codepen.io/timrijkse/full/XjLGKv/" ></iframe>
                 </div>
             );
         }
