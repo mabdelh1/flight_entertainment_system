@@ -7,13 +7,28 @@
   h1{
     color: rgb(65, 90, 158);
   }
-#element1 {display:inline-block;margin-right:10px;} 
+#element1 {display:inline-block; margin-right:10px;} 
 #element2 {color: rgb(65, 90, 158);float:right; padding:20px 0; font-weight: 500;}
 #element3 {display:inline-block;margin-right:10px; font-weight:bold; color: rgb(65, 90, 158);} 
 #element4 {float:right; background-color:lightblue; border-color: lightblue; font-weight:bold; color: white;}
-#element5 {display:inline-block;}
+#element5 {float:left}
 #element6 {display:inline-block;}
+#element7 {display:inline-block; display: flex; justify-content: center;}
+#element8 {display:inline-block; width: 300px;}
 
+
+#cancel{
+    width: 600px;
+    display: flex; 
+    justify-content: center;
+    padding: 10px;
+}
+
+#center{
+    margin:auto;
+    align-items: center; 
+    justify-content: center;
+}
 
 #categories{
     height: 300px;
@@ -36,6 +51,7 @@ button-solid:focus {
 .button-white {
     border: none;
     background-color: white;
+    color:rgb(65, 90, 158);
 }
 button-white:focus {
     border: none;
@@ -46,4 +62,19 @@ button-white:focus {
     height: 55px;
     padding: 9px 10px;
     background-color: rgb(12, 12, 68);
+}
+.blink-bg{
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    width: 600px;
+    height: 330px;
+    animation: blinkingBackground 1s infinite;
+    display: flex; 
+    justify-content: center;
+}
+@keyframes blinkingBackground{
+    0%		{ background-color: white;}
+    100%	{ background-color: #ef0a1a;}
 }

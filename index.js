@@ -22,7 +22,7 @@ class App extends React.Component{
                         &nbsp; &nbsp; &nbsp;
                     </div>
                     <div id="action">
-                        <button id="element3" type="button" className="btn btn-light btn-md btn-block">Declare Emergancy</button>
+                        <button onClick={() => {this.setState({page: 'Emergancy'})}} id="element3" type="button" className="btn btn-light btn-md btn-block">Declare Emergancy</button>
                         <button id="element4" type="button" className="btn btn-light btn-md btn-block">Call Attendant</button>
                     </div>
                 </div>
@@ -32,7 +32,8 @@ class App extends React.Component{
             return(
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
-                    <h1 id="element6">MOVIES PAGE RENDERED</h1>
+                    <h1 id="element6">MOVIES</h1> <br></br>
+                    <iframe width="720" height="405" src="https://www.youtube.com/embed/videoseries?list=PLxZNVDf39dNT_B3XrHzrOGoA-KQ675d4a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             );
         }
@@ -48,7 +49,8 @@ class App extends React.Component{
             return(
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
-                    <h1 id="element6">GAMES PAGE RENDERED</h1>
+                    <h1 id="element6">GAMES</h1> <br></br>
+                    <iframe width="720" height="405" src="https://codepen.io/timrijkse/full/XjLGKv/" ></iframe>
                 </div>
             );
         }
@@ -73,6 +75,18 @@ class App extends React.Component{
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <h1 id="element6">DINING PAGE RENDERED</h1>
+                </div>
+            );
+        }
+        else if (this.state.page === 'Emergancy'){
+            return(
+                <div>
+                    <div><h1 id="element7">Emergancy Declared!</h1></div>
+                    <div className="blink-bg">
+                    </div>
+                    <div id="cancel">
+                    <button id="element8" type="button" class="btn btn-warning btn-lg btn-block" onClick={() => {this.setState({page: 'Home'})}}>Cancel</button>
+                    </div>
                 </div>
             );
         }
