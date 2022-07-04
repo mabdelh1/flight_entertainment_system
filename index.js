@@ -22,7 +22,7 @@ class App extends React.Component{
                         &nbsp; &nbsp; &nbsp;
                     </div>
                     <div id="action">
-                        <button onClick={() => {this.setState({page: 'Emergancy'})}} id="element3" type="button" className="btn btn-light btn-md btn-block">Declare Emergancy</button>
+                        <button onClick={() => {this.setState({page: 'Emergancy'})}} id="element3" type="button" className="btn btn-light btn-md btn-block">Declare Emergency</button>
                         <button id="element4" type="button" className="btn btn-light btn-md btn-block">Call Attendant</button>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ class App extends React.Component{
         else if (this.state.page === 'Emergancy'){
             return(
                 <div>
-                    <div><h1 id="element7">Emergancy Declared!</h1></div>
+                    <div><h1 id="element7">Emergency Declared!</h1></div>
                     <div className="blink-bg">
                     </div>
                     <div id="cancel">
