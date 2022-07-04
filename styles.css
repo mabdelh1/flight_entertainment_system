@@ -7,7 +7,12 @@
   h1{
     color: rgb(65, 90, 158);
   }
-#element1 {display:inline-block; margin-right:10px;} 
+
+  h3{
+      color: rgb(65, 90, 158);
+  }
+  
+#element1 {display:inline-block;margin-right:10px;} 
 #element2 {color: rgb(65, 90, 158);float:right; padding:20px 0; font-weight: 500;}
 #element3 {display:inline-block;margin-right:10px; font-weight:bold; color: rgb(65, 90, 158);} 
 #element4 {float:right; background-color:lightblue; border-color: lightblue; font-weight:bold; color: white;}
@@ -63,6 +68,7 @@ button-white:focus {
     padding: 9px 10px;
     background-color: rgb(12, 12, 68);
 }
+
 .blink-bg{
     color: #fff;
     padding: 10px;
@@ -78,3 +84,45 @@ button-white:focus {
     0%		{ background-color: white;}
     100%	{ background-color: #ef0a1a;}
 }
+
+#emergency{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 20%;
+    text-align: center;
+    min-width: 100%;
+    background-color: red;
+    min-height: 100vh;
+    display: block;
+    vertical-align: middle;
+    width: 50%;
+    height: 200px;
+    margin: auto;
+    border-radius: 10px;
+    align-items:center;
+    justify-content:center;
+}
+
+.emergency{
+    color: white;
+    text-align: center;
+}
+
+.button-emergency{
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    size: 100px 200px;
+}
+
+.assist{
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(65, 90, 158);
+    border-color: rgb(65, 90, 158);
+    size: 100px 200px;
+}
+
