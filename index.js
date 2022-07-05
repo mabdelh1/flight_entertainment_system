@@ -1,8 +1,11 @@
 class App extends React.Component{
     constructor(props){
         super(props);
-        this.state = {page : 'Home'};
+       
+        
+        this.state = {page: 'Home'};
     }
+
     render(){
         if(this.state.page === 'Home'){
             return(
@@ -41,6 +44,17 @@ class App extends React.Component{
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <h1 id="element6">MOVIES</h1> <br></br>
                     <iframe width="720" height="405" src="https://www.youtube.com/embed/videoseries?list=PLxZNVDf39dNT_B3XrHzrOGoA-KQ675d4a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div id="action">
+                        <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Emergency'})
+                        }}>Declare
+                            Emergency
+                        </button>
+                        <button id="element4" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Assistance'})
+                        }}>Call Attendant
+                        </button>
+                    </div>
                 </div>
             );
         }
@@ -49,6 +63,18 @@ class App extends React.Component{
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <h1 id="element6">PHONES PAGE RENDERED</h1>
+
+                    <div id="action">
+                        <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Emergency'})
+                        }}>Declare
+                            Emergency
+                        </button>
+                        <button id="element4" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Assistance'})
+                        }}>Call Attendant
+                        </button>
+                    </div>
                 </div>
             );
         }
@@ -58,6 +84,19 @@ class App extends React.Component{
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <h1 id="element6">GAMES</h1> <br></br>
                     <iframe width="720" height="405" src="https://codepen.io/timrijkse/full/XjLGKv/" ></iframe>
+
+                    <div id="action">
+                        <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Emergency'})
+                        }}>Declare
+                            Emergency
+                        </button>
+                        <button id="element4" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Assistance'})
+                        }}>Call Attendant
+                        </button>
+                    </div>
+
                 </div>
             );
         }
@@ -66,6 +105,19 @@ class App extends React.Component{
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <h1 id="element6">FLIGHT INFO PAGE RENDERED</h1>
+
+                    <div id="action">
+                        <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Emergency'})
+                        }}>Declare
+                            Emergency
+                        </button>
+                        <button id="element4" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Assistance'})
+                        }}>Call Attendant
+                        </button>
+                    </div>
+
                 </div>
             );
         }
@@ -74,15 +126,76 @@ class App extends React.Component{
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <h1 id="element6">PURCHASES PAGE RENDERED</h1>
+
+                    <div id="action">
+                        <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Emergency'})
+                        }}>Declare
+                            Emergency
+                        </button>
+                        <button id="element4" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Assistance'})
+                        }}>Call Attendant
+                        </button>
+                    </div>
                 </div>
             );
         }
         else if (this.state.page === 'Dining'){
             return(
-                <div className="text-center">
-                    <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
-                    <h1 id="element6">DINING PAGE RENDERED</h1>
+                //no longer centered
+                <div>
+                    <button className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
+                    <br></br>
+                    
+                    <h1>Meal Options</h1>
+                    <input type="radio" name="option1" value="Carne"></input> Carne Asada...............<b>$14.50</b>
+                                <div><ul>
+                                    <li>sides: White Rice, Black Beans</li>
+                                    </ul></div>
+                                <img src="Carne-Asada.jpg" alt="carne asada" width="100" height="50"></img>
+                            <br></br>
+                    <input type="radio" name="option2" value="Chicken"></input>Grilled Chicken................<b>$11.75</b>
+                                <div><ul>
+                                    <li>sides: White Rice, Asparagus</li>
+                                    </ul></div>
+                                <img src="Chicken.jpg" alt="chicken" width="100" height="50"></img>
+                            <br></br>    
+                    <input type="radio" name="option3" value="Salad"></input> Caesar Salad...................<b>$8.25</b>
+                                <div><ul>
+                                    <li>sides: Ranch Dressing</li>
+                                    </ul></div>
+                                <img src="Caesar.jpg" alt="caesar" width="100" height="50"></img>
+                            <br></br>   
+                    <input type="radio" name="option4" value="Tofu"></input> Pan fried Sesame Tofu..........<b>$10.00</b>
+                                <div><ul>
+                                    <li>sides: Brown Rice, Broccoli</li>
+                                    </ul></div>
+                                <img src="Tofu.jpg" alt="Hamburger" width="100" height="50"></img>
+                            <br></br>
+                    <input type="radio" name="option1" value="Carne"></input><li>Hamburger......................<b>$12.00</b></li>
+                                <div><ul>
+                                    <li>sides: French Fries </li>
+                                    </ul></div>
+                                <img src="Hamburger.jpg" alt="hamburger" width="100" height="50"></img>
+                            <br></br>
+                    <br></br><input type="submit" value="Submit"></input>
+
+
+                    <div id="action">
+                        <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Emergency'})
+                        }}>Declare
+                            Emergency
+                        </button>
+                        <button id="element4" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Assistance'})
+                        }}>Call Attendant
+                        </button>
+                    </div>
+
                 </div>
+                
             );
         }
         else if (this.state.page === 'Emergency') {
