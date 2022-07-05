@@ -1,11 +1,14 @@
 class App extends React.Component{
     constructor(props){
         super(props);
-       
+        this.handleCost = this.handleCost.bind(this);
         
-        this.state = {page: 'Home'};
+        this.state = {page: 'Home', cost: 0};
     }
 
+    handleCost(cost){
+        this.setState({cost:cost});
+    }
     render(){
         if(this.state.page === 'Home'){
             return(
@@ -148,39 +151,8 @@ class App extends React.Component{
                     <button className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <br></br>
                     
-                    <h1>Meal Options</h1>
-                    <input type="radio" name="option1" value="Carne"></input> Carne Asada...............<b>$14.50</b>
-                                <div><ul>
-                                    <li>sides: White Rice, Black Beans</li>
-                                    </ul></div>
-                                <img src="Carne-Asada.jpg" alt="carne asada" width="100" height="50"></img>
-                            <br></br>
-                    <input type="radio" name="option2" value="Chicken"></input>Grilled Chicken................<b>$11.75</b>
-                                <div><ul>
-                                    <li>sides: White Rice, Asparagus</li>
-                                    </ul></div>
-                                <img src="Chicken.jpg" alt="chicken" width="100" height="50"></img>
-                            <br></br>    
-                    <input type="radio" name="option3" value="Salad"></input> Caesar Salad...................<b>$8.25</b>
-                                <div><ul>
-                                    <li>sides: Ranch Dressing</li>
-                                    </ul></div>
-                                <img src="Caesar.jpg" alt="caesar" width="100" height="50"></img>
-                            <br></br>   
-                    <input type="radio" name="option4" value="Tofu"></input> Pan fried Sesame Tofu..........<b>$10.00</b>
-                                <div><ul>
-                                    <li>sides: Brown Rice, Broccoli</li>
-                                    </ul></div>
-                                <img src="Tofu.jpg" alt="Hamburger" width="100" height="50"></img>
-                            <br></br>
-                    <input type="radio" name="option1" value="Carne"></input><li>Hamburger......................<b>$12.00</b></li>
-                                <div><ul>
-                                    <li>sides: French Fries </li>
-                                    </ul></div>
-                                <img src="Hamburger.jpg" alt="hamburger" width="100" height="50"></img>
-                            <br></br>
-                    <br></br><input type="submit" value="Submit"></input>
-
+                <Spinner cost={this.state.cost} updateCost={this.handleCost}/>
+                <button className="btn btn-success " onClick={() => {this.setState({page: 'Ordered'})}}> SUBMIT</button> 
 
                     <div id="action">
                         <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
@@ -197,6 +169,7 @@ class App extends React.Component{
                 </div>
                 
             );
+            
         }
         else if (this.state.page === 'Emergency') {
             return (
@@ -223,8 +196,22 @@ class App extends React.Component{
                 </div>
             );
         }
+        else if (this.state.page === 'Ordered') {
+            return (
+                <div className="text-center">
+                    <h1>Thank you for ordering!</h1>
+                    <br/>
+                    <h3>Your Meal will be delivered shortly.</h3>
+                    <br/>
+                    <button className="assist" onClick={() => {
+                        this.setState({page: 'Home'})
+                    }}><h4>Back to Home</h4></button>
+                </div>
+            );
+        
     }
 
+}
 }
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
