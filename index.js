@@ -107,14 +107,10 @@ class App extends React.Component{
             return(
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
-                    <h1 id="element6">FLIGHT INFO PAGE RENDERED</h1>
-
+                    <FlightInfo/>
                     <div id="action">
                         <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
-                            this.setState({page: 'Emergency'})
-                        }}>Declare
-                            Emergency
-                        </button>
+                            this.setState({page: 'Emergency'})}}>Declare Emergency </button>
                         <button id="element4" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
                             this.setState({page: 'Assistance'})
                         }}>Call Attendant
@@ -150,9 +146,9 @@ class App extends React.Component{
                 <div>
                     <button className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <br></br>
-                    
+                
                 <Spinner cost={this.state.cost} updateCost={this.handleCost}/>
-                <button className="btn btn-success " onClick={() => {this.setState({page: 'Ordered'})}}> SUBMIT</button> 
+                <button className="btn btn-success " onClick={() => {this.setState({page: 'Payment'})}}> SUBMIT</button> 
 
                     <div id="action">
                         <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
@@ -165,9 +161,7 @@ class App extends React.Component{
                         }}>Call Attendant
                         </button>
                     </div>
-
-                </div>
-                
+                </div>        
             );
             
         }
@@ -196,9 +190,90 @@ class App extends React.Component{
                 </div>
             );
         }
+        else if (this.state.page === 'Payment') {
+            return(
+            <div>
+                <button className="button-white" onClick={() => {this.setState({page: 'Dining'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
+                    <br></br>
+            <form class="credit-card">
+            <div class="form-header">
+              <h4 class="title">Credit card detail</h4>
+            </div>
+           
+            <div class="form-body">
+              
+              <input type="text" class="card-number" placeholder="Card Number"></input>
+           
+              
+              <div class="date-field">
+                <div class="month">
+                  <select name="Month">
+                    <option value="january">January</option>
+                    <option value="february">February</option>
+                    <option value="march">March</option>
+                    <option value="april">April</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september">September</option>
+                    <option value="october">October</option>
+                    <option value="november">November</option>
+                    <option value="december">December</option>
+                  </select>
+                </div>
+                <div class="year">
+                  <select name="Year">
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                  </select>
+                </div>
+              </div>
+           
+              
+              <div class="card-verification">
+                <div class="cvv-input">
+                  <input type="text" placeholder="CVV"></input>
+                </div>
+                <div class="cvv-details">
+                  <p>3 digits usually found <br></br> on the back</p>
+                </div>
+              </div>
+           
+              
+              <button type="submit" class="proceed-btn" onClick={() => {this.setState({page: 'Ordered'})}}><a href="#">Proceed</a></button>
+              <button type="submit" class="loyalty-btn" onClick={() => {this.setState({page: 'Ordered'})}}><a href="#">Pay With Loyalty Points</a></button>
+              You have <span color="blue"> 1400 </span> loyalty points
+            </div>
+          </form>
+
+          <div id="action">
+                        <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Emergency'})
+                        }}>Declare
+                            Emergency
+                        </button>
+                        <button id="element4" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Assistance'})
+                        }}>Call Attendant
+                        </button>
+                    </div>
+          </div>
+            );
+        }
+
         else if (this.state.page === 'Ordered') {
             return (
+                
                 <div className="text-center">
+
                     <h1>Thank you for ordering!</h1>
                     <br/>
                     <h3>Your Meal will be delivered shortly.</h3>
@@ -206,6 +281,7 @@ class App extends React.Component{
                     <button className="assist" onClick={() => {
                         this.setState({page: 'Home'})
                     }}><h4>Back to Home</h4></button>
+                    
                 </div>
             );
         
