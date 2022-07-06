@@ -18,9 +18,6 @@ gradeQuiz= ()=>{
                 }
         }
     }
-    
-    
-
 }
 
     render() {
@@ -59,16 +56,94 @@ gradeQuiz= ()=>{
                                     <li>sides: French Fries </li>
                                     </ul></div>
                                 <img src="Hamburger.jpg" alt="hamburger" width="100" height="50"></img>
-                            <br></br>
+                            
+                    <div id="costElement">
+                        ${this.props.cost}
+                    </div>
                     </p>
                 </div>
-            
-                
-            <div id="costElement">
-               ${this.props.cost}
-            </div>
-                
+              
         </div>
+        );
+    }
+  }
+
+  class FlightInfo extends React.Component{
+    constructor(props) {
+        super(props);
+        
+      }
+
+
+
+    render() {
+        
+        return (   
+            <div>
+                <h1>Flight Info</h1>
+                <body>
+                <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                    
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Origin</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Airlines</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Destination</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Flight Number</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Distance(in miles)</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Time Left</a>
+                        </li>
+                    </ul>
+                    </div>  
+                </nav>
+                </body>
+                
+                <body>
+                <nav class="nav navbar-expand-sm">
+                  
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BWI </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">UMBC Air</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">LAX Airlines</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Flight No.A437</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">2662 Miles Left</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">5 Hrs 13 mins</a>
+                        </li>
+                    </ul>
+                    </div>  
+                </nav>
+                </body>
+                <br></br>
+                <br></br>
+            </div>
+            
         );
     }
   }
