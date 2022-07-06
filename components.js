@@ -13,12 +13,14 @@ gradeQuiz= ()=>{
         var radioList = questionList[i].getElementsByTagName("input");
         for(var j=0;j<radioList.length;j++){
             if (radioList[j].checked == true ) {
-                    this.props.updateCost(answers[i +1]);
+                    this.props.updateCost(answers[j+1]);
+                   
                    
                 }
         }
     }
 }
+
 
     render() {
         
@@ -56,6 +58,8 @@ gradeQuiz= ()=>{
                                     <li>sides: French Fries </li>
                                     </ul></div>
                                 <img src="Hamburger.jpg" alt="hamburger" width="100" height="50"></img>
+                    
+                   
                             
                     <div id="costElement">
                         ${this.props.cost}
@@ -73,9 +77,7 @@ gradeQuiz= ()=>{
         super(props);
         
       }
-
-
-
+      
     render() {
         
         return (   
@@ -140,6 +142,7 @@ gradeQuiz= ()=>{
                     </div>  
                 </nav>
                 </body>
+                
                 <br></br>
                 <br></br>
             </div>
@@ -147,3 +150,5 @@ gradeQuiz= ()=>{
         );
     }
   }
+
+  
