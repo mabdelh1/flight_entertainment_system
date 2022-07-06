@@ -3,7 +3,8 @@ class App extends React.Component{
         super(props);
         this.handleCost = this.handleCost.bind(this);
         
-        this.state = {page: 'Home', cost: 0};
+        this.state = {page: 'Home', cost: 0, db: {}};
+        
     }
 
     handleCost(cost){
@@ -46,7 +47,7 @@ class App extends React.Component{
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <h1 id="element6">MOVIES</h1> <br></br>
-                    <iframe width="720" height="405" src="https://www.youtube.com/embed/videoseries?list=PLxZNVDf39dNT_B3XrHzrOGoA-KQ675d4a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="720" height="405" src="https://watch.plex.tv/?plex_utm=1&utm_source=Plex&utm_medium=marketing-site&utm_campaign=Free%20Movies%20%7C%20Watch%20Free%20With%20Plex&origin=marketing" title="Movie Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div id="action">
                         <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
                             this.setState({page: 'Emergency'})
@@ -86,7 +87,7 @@ class App extends React.Component{
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <h1 id="element6">GAMES</h1> <br></br>
-                    <iframe width="720" height="405" src="https://codepen.io/timrijkse/full/XjLGKv/" ></iframe>
+                    <iframe width="720" height="405" src="https://www.addictinggames.com/" ></iframe>
 
                     <div id="action">
                         <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
@@ -160,6 +161,7 @@ class App extends React.Component{
                             this.setState({page: 'Assistance'})
                         }}>Call Attendant
                         </button>
+                       
                     </div>
                 </div>        
             );
@@ -248,8 +250,8 @@ class App extends React.Component{
               </div>
            
               
-              <button type="submit" class="proceed-btn" onClick={() => {this.setState({page: 'Ordered'})}}><a href="#">Proceed</a></button>
-              <button type="submit" class="loyalty-btn" onClick={() => {this.setState({page: 'Ordered'})}}><a href="#">Pay With Loyalty Points</a></button>
+              <button type="submit" class="proceed-btn" onClick={() => {this.setState({page: 'Method'})}}><a href="#">Proceed</a></button>
+              <button type="submit" class="loyalty-btn" onClick={() => {this.setState({page: 'Method'})}}><a href="#">Pay With Loyalty Points</a></button>
               You have <span color="blue"> 1400 </span> loyalty points
             </div>
           </form>
@@ -286,6 +288,29 @@ class App extends React.Component{
             );
         
     }
+
+    else if (this.state.page === 'Method') {
+        return(
+            <div className="text-center">
+
+                    <h1>Choose How You Would</h1>
+                    <h1> Like to Recieve Your Receipt</h1>
+                    <br/>
+                    <input type="radio" id="element1" name="option1" value="email"></input>SMS
+                    <br/>
+                    <input type="radio" id="element1" name="option1" value="SMS"></input> E-mail
+                    <br></br>
+                    <br></br>
+                    <button className="assist" onClick={() => {
+                        this.setState({page: 'Ordered'})
+                    }}><h4>Confirm</h4></button>
+                    
+                </div>
+        );
+    }
+
+        
+      
 
 }
 }
