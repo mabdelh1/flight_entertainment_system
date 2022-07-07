@@ -199,8 +199,8 @@ body {
 .receipt{
     display: block;
     background-color: rgb(228, 226, 226);
-    width: 500px;
-    height: 700px;
+    width: 40em;
+    height: 50em;
     text-align: left;
     justify-content: left;
     justify-items: left;
