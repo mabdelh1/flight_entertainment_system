@@ -210,7 +210,7 @@ h1.receipt{
     text-align: center;
     justify-items: center;
     justify-content: center;
-    width: 500px;
+    width: 89vh;
     height: 75px;
     padding-top: 20px;
 }
@@ -218,7 +218,7 @@ h3.receipt{
     text-align: center;
     justify-items: center;
     justify-content: center;
-    width: 500px;
+    width: 89vh;
     height: 50px;
 }
 .select-btn{
