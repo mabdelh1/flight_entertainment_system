@@ -2,14 +2,19 @@ class App extends React.Component{
     constructor(props){
         super(props);
         this.handleCost = this.handleCost.bind(this);
+        this.handleNum = this.handleNum.bind(this);
         
-        this.state = {page: 'Home', cost: 0, db: {}};
+        this.state = {page: 'Home', cost: 0, db: {}, num: ''};
         
     }
 
     handleCost(cost){
         this.setState({cost:cost});
     }
+    handleNum = (num) => {
+        this.setState({num:num});
+    }
+    
     render(){
         if(this.state.page === 'Home'){
             return(
@@ -66,7 +71,17 @@ class App extends React.Component{
             return(
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
-                    <h1 id="element6">PHONES PAGE RENDERED</h1>
+                    <div className="phone">
+                        <h1 id="element6">PHONE</h1>
+                        <br/>
+                        <br/>
+
+                        <Phone num={this.state.num} updateNum={this.handleNum}/>
+                        <button type="button" className="phone" id="dial-button" onClick={() => {
+                            this.setState({page: 'Calling'})
+                        }}><i
+                            className="fa-solid fa-phone fa-6x"></i></button>
+                    </div>
 
                     <div id="action">
                         <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
@@ -126,6 +141,12 @@ class App extends React.Component{
                 <div className="text-center">
                     <button id="element5" className="button-white" onClick={() => {this.setState({page: 'Home'})}}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
                     <h1 id="element6">PURCHASES PAGE RENDERED</h1>
+                    <div>
+                        <Purchases />
+                    </div>
+                    <div className="button-handler">
+                        <button type="button" className="btn btn-success" style={{marginBottom: 50}} onClick={() => {this.setState({page: 'recReq'})}}>Confirm</button>
+                    </div>
 
                     <div id="action">
                         <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
@@ -308,6 +329,51 @@ class App extends React.Component{
                 </div>
         );
     }
+    else if (this.state.page === 'Calling'){
+            return (
+                <div className="text-center">
+                    <button id="element5" className="button-white" onClick={() => {
+                        this.setState({page: 'Home'})
+                    }}><i className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
+                    <div className="phone">
+                        <h1 id="element6">PHONE</h1>
+                        <h2 className="phone">Calling...</h2>
+                        <Phone num={this.state.num} updateNum={this.handleNum}/>
+                        <button type="button" className="phone" id="cancel-button" onClick={() => {
+                            this.setState({page: 'Phone', num: ''})
+                        }}><i
+                            className="fa-solid fa-phone fa-6x"></i></button>
+                    </div>
+                    <div id="action">
+                        <button id="element3" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Emergency'})
+                        }}>Declare
+                            Emergency
+                        </button>
+                        <button id="element4" type="button" className="btn btn-light btn-md btn-block" onClick={() => {
+                            this.setState({page: 'Assistance'})
+                        }}>Call Attendant
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+        else if (this.state.page === 'recReq'){
+            return (
+
+                <div className="text-center">
+
+                    <h1>We've got your request!</h1>
+                    <br/>
+                    <h3>You should receive your transaction history shortly.</h3>
+                    <br/>
+                    <button className="assist" onClick={() => {
+                        this.setState({page: 'Home'})
+                    }}><h4>Back to Home</h4></button>
+
+                </div>
+            );
+        }
 
         
       
