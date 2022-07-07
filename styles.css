@@ -195,4 +195,150 @@ body {
  
 .loyalty-btn {padding-right: 95px; background: 65% 56% #009cde;}
 
+/*Purchases*/
+.receipt{
+    display: block;
+    background-color: rgb(228, 226, 226);
+    width: 500px;
+    height: 700px;
+    text-align: left;
+    justify-content: left;
+    justify-items: left;
+}
+
+h1.receipt{
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 75px;
+    padding-top: 20px;
+}
+h3.receipt{
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 50px;
+}
+.select-btn{
+    margin-left: 50px;
+    margin-bottom: 50px;
+    margin-right: 25px;
+}
+.button-handler{
+    background-color: rgb(228, 226, 226);
+}
+
+/*Phone*/
+.phone{
+    display: block;
+    background-color: rgb(228, 226, 226);
+    width: 500px;
+    height: 700px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+h1.phone{
+    display: flex;
+    width: 500px;
+    height: 70px;
+    text-align: right;
+    vertical-align: center;
+    align-content: center;
+    justify-content: right;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+h2.phone{
+    display: flex;
+    width: 300px;
+    height: 20px;
+    text-align: center;
+    vertical-align: center;
+    align-content: center;
+    color: rgb(65, 90, 158);
+    /*justify-content: left;*/
+    padding-right: 50px;
+    padding-top: 20px;
+}
+#number{
+    display: flex;
+    width: 500px;
+    height: 90px;
+    text-align: right;
+    vertical-align: center;
+    align-content: center;
+    justify-content: right;
+    padding-right: 50px;
+    padding-top: 50px;
+}
+#digit-button{
+    display: grid;
+    background-color: rgb(65, 90, 158);
+    width: 80px;
+    height: 80px;
+    /*padding: 1.6px;*/
+    margin-left: 65px;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: center;
+    align-content: center;
+    justify-content: center;
+    float: left;
+    color: white;
+    font-size: larger;
+}
+#dial-button{
+    display: grid;
+    background-color: forestgreen;
+    width: 80px;
+    height: 80px;
+    /*padding: 1.6px;*/
+    margin-left: 210px;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: center;
+    align-content: center;
+    justify-content: center;
+    float: left;
+    color: white;
+    font-size: 9px;
+}
+#cancel-button{
+    display: grid;
+    background-color: red;
+    width: 80px;
+    height: 80px;
+    /*padding: 1.6px;*/
+    margin-left: 65px;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: center;
+    align-content: center;
+    justify-content: center;
+    float: left;
+    color: white;
+    font-size: 9px;
+}
+#backspace-button{
+    display: grid;
+    background-color: slategray;
+    width: 80px;
+    height: 80px;
+    padding: 1.6px;
+    margin-left: 65px;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: center;
+    align-content: center;
+    justify-content: center;
+    float: left;
+    color: white;
+    font-size: 9px;
+
+}
+
 
