@@ -150,5 +150,105 @@ gradeQuiz= ()=>{
         );
     }
   }
+class Phone extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        let add = e.target.value;
+        let prev = this.props.num.toString();
+        if (add == "del" || add == undefined) {
+            let newNum = prev.slice(0, -1);
+            this.props.updateNum(newNum);
+        } else {
+            let newNum = prev + add;
+            this.props.updateNum(newNum);
+        }
+    }
+    
+    render() {
+        return (
+            <div>
+
+                <h1 id="number123" className="phone" value={this.props.num}
+                    onChange={this.handleChange}>{this.props.num}</h1>
+                <div id="phone">
+                    <button type="button" className="phone" id="digit-button" value="1"
+                            onClick={this.handleChange}>1
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="2"
+                            onClick={this.handleChange}>2
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="3"
+                            onClick={this.handleChange}>3
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="4"
+                            onClick={this.handleChange}>4
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="5"
+                            onClick={this.handleChange}>5
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="6"
+                            onClick={this.handleChange}>6
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="7"
+                            onClick={this.handleChange}>7
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="8"
+                            onClick={this.handleChange}>8
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="9"
+                            onClick={this.handleChange}>9
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="*"
+                            onClick={this.handleChange}>*
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="0"
+                            onClick={this.handleChange}>0
+                    </button>
+                    <button type="button" className="phone" id="digit-button" value="#"
+                            onClick={this.handleChange}>#
+                    </button>
+
+                    <button type="button" className="phone" id="backspace-button" value="del"
+                            onClick={this.handleChange}><i
+                        className="fa-solid fa-circle-chevron-left fa-3x"></i></button>
+
+                </div>
+            </div>
+        );
+    }
+}
+
+class Purchases extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+
+    render(){
+        return(
+            <div className="receipt">
+            <h1 className="receipt">Purchase History</h1>
+            <ul>
+                <li><b>Invoice 1</b><br/>Transaction Date: 7/1/22 <br/>Category: Dining <br/>Amount: $12.00 <br/>Item(s): Hamburger<br/>Payment Method: Loyalty Points<br/></li>
+                <hr style={{marginRight: 30}}/>
+                <li><b>Invoice 2</b><br/>Transaction Date: 7/1/22 <br/>Category: Phone <br/>Amount: $12.00 <br/>Call Length: 24 min.<br/>Payment Method: Credit Card<br/></li>
+            </ul>
+                <hr/>
+                <h3 className="receipt">How would you like to receive your list of purchases?</h3>
+                <br/>
+                <br/>
+                <input type="checkbox" value="SMS" className="select-btn"/>SMS
+                <br/>
+                <input type="checkbox" value="Email" className="select-btn"/>Email
+                <br/>
+
+            </div>
+        );
+    }
+}
 
   
